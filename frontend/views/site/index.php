@@ -3,6 +3,30 @@
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
+
+//$count = isset($_COOKIE['count']) ? $_COOKIE['count'] :0;
+//$count++;
+//setcookie("count", $count);
+//echo $count;
+//$cookies = Yii::$app->response->cookies;
+//if (($cookie = $cookies->get('count')) !== null) {
+//    $count = $cookie->value;
+//}
+//$cookies->add(new \yii\web\Cookie([
+//    'name' => 'count',
+//    'value' => $count
+//]));
+//echo $count;
+
+//echo Yii::$app->response->cookies['count'];
+$count = isset($_COOKIE['count']) ? $_COOKIE['count'] : 0;
+
+$count++;
+
+setcookie("count", $count, time() + 86400);
+echo $count;
+
+
 ?>
 <div class="site-index">
 

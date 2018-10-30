@@ -73,6 +73,24 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+//        $cookies = Yii::$app->response->cookies;
+//
+//        if (($count = $cookies->getValue('count')) !== null) {
+//        $count++;
+//        }else{ $count=1;}
+//       // $count = isset($cookies['count']) ? $cookies['count']->value :0;
+//
+//
+//        Yii::$app->response->cookies->add(new \yii\web\Cookie([
+//            'name' => 'count',
+//            'value' => $count,
+//        ]));
+        //var_dump($cookies->getValue('count'));
+
+         $count = isset($_COOKIE['count']) ? $_COOKIE['count'] : 0;
+         $count++;
+         setcookie("count", $count);
+        //echo $count;
         return $this->render('index');
     }
 
